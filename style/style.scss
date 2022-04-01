@@ -198,6 +198,7 @@ body {
 .img-near-btn {
     position: absolute;
     left: calc(50% + 8em);
+    bottom: 0;
 }
 
 .landing-section {
@@ -403,6 +404,10 @@ body {
     .item-container {
         display: flex;
         gap: 36px;
+
+        .card-item:hover {
+            cursor: pointer;
+        }
         
         .card-item {
             display: flex;
@@ -486,21 +491,55 @@ body {
     
     .title-block {
         margin-left: -160px;
+
+        .h2 {
+            margin-bottom: 24px;
+        }
+
+        .btn {
+            margin-top: 72px;
+        }
     }
 }
 
 .carousel-section {
-    .title-block {
-        margin-bottom: 96px;
-    }
+    position: relative;
+    padding-bottom: 40px;
+    margin-top: 96px;
 
+
+    .img-near-btn {
+        left: unset;
+        right: calc(50% + 8em);
+        bottom: 0;
+    }
 }
 
 .carousel {
     display: flex;
     gap: 48px;
-    overflow: scroll;
+    overflow-x: scroll;
 
+    &::-webkit-scrollbar {
+        background-color: #D9DBE9;
+        height: 3px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #D9DBE9; 
+        border: 1px solid #f9f8f2;
+        border-left: 72px solid #f9f8f2;
+        border-right: 72px solid #f9f8f2;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $secondary; 
+        border-radius: 50px;
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background-color: #802a49;
+    }
 
     .carousel-card {
         display: flex;
@@ -554,6 +593,95 @@ body {
 
         .btn-hover {
             visibility: visible;
+        }
+    }
+}
+
+.draw-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.section-article {
+    margin-top: -96px;
+    padding-left: $margin;
+    padding-right: $margin;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+
+    .article-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 84px;
+        margin-bottom: 96px;
+
+        .card-article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 32px;
+            width: min-content;
+        
+            &:hover {
+                cursor: pointer;
+        
+                .article__img {
+                    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+                }
+        
+                .article-txt__title {
+                    color: $secondary;
+                }
+            }
+        
+            .article-txt__title {
+                margin-bottom: 16px;
+            }
+        
+            .card-article-footer {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 24px;
+            }
+        }
+    }
+
+    .img-near-btn {
+        bottom: 36px;
+        left: calc(50% + 6em);
+    }
+}
+
+.infographic-container {
+    margin-top: 112px;
+}
+
+.infographic {
+    background-color: $tertiary;
+    padding-left: $margin;
+    padding-right: $margin;
+    padding-bottom: 150px;
+
+    .infographic__title {
+        white-space: pre-line;
+    }
+
+    .infographic-list {
+        margin-top: 110px;
+        display: flex;
+        justify-content: space-between;
+
+        .infographic-list__item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+
+            .infographic__number {
+                align-self: flex-start;
+            }
         }
     }
 }
