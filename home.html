@@ -444,37 +444,82 @@
             </div>
         </div>
 
-        <div class="infographic">
+        <div class="infographic infographic--last">
             <div class="title-block">
                 <p class="infographic__title h2 text-primary">Con i prodotti Racilia riesco 
-                    a gustare il vero sapore della Sicilia!</p>
-                <img src="./assets/quote.svg" alt="quote">
+                    a gustare il vero sapore della Sicilia!
+                </p>
+                <img class="mt-4" src="./assets/quote.svg" alt="quote">
+                <p class="quote-author h5 mt-4">Isabella M.</p>
             </div>
-            <div class="infographic-list">
-                <div class="infographic-list__item">
-                    <img class="infographic__number" src="./assets/1.svg" alt="1">
-                    <img src="./assets/Chars.svg" alt="icon">
-                    <p class="h3 bold text-white">PRODUCT SELECTION</p>
-                </div>
-
-                <div class="infographic-list__item">
-                    <img class="infographic__number" src="./assets/2.svg" alt="1">
-                    <img src="./assets/Chars2.svg" alt="icon">
-                    <p class="h3 bold text-white">QUALITY TEST</p>
-                </div>
-
-                <div class="infographic-list__item">
-                    <img class="infographic__number" src="./assets/33.svg" alt="1">
-                    <img src="./assets/SAUCES.svg" alt="icon">
-                    <p class="h3 bold text-white">PACKAGING</p>
-                </div>
-
-                <div class="infographic-list__item">
-                    <img class="infographic__number" src="./assets/4.svg" alt="1">
-                    <img src="./assets/ship.svg" alt="icon">
-                    <p class="h3 bold text-white">SHIPMENT</p>
-                </div>
+            <div class="infographic-list infographic-list--space-evenly">
+                <img src="./assets/inf1.svg" alt="badge">
+                <img src="./assets/inf2.svg" alt="badge">
+                <img src="./assets/inf3.svg" alt="badge">
+                <img src="./assets/inf4.svg" alt="badge">
+                <img src="./assets/inf5.svg" alt="badge">
             </div>
+        </div>
+        <img class="infographic__divider infographic__divider--rotate w-100" src="./assets/divider-t-color.svg" alt="divider">
     </section>
+
+    <div class="newsletter-box col-7">
+        <img class="newsletter__draw newsletter__draw--left" src="./assets/draw-newsletter.svg" alt="draw">
+        <img class="newsletter__draw newsletter__draw--right" src="./assets/draw-newsletter2.svg" alt="draw">
+        <div class="newsletter-container">
+            <div class="title-block">
+                <p class="h2 text-primary">Cavalca l’onda del Mediterraneo!</p>
+                <p class="h4">Rimani sempre aggiornato sulle news, offerte e nuovi prodotti</p>
+            </div>
+            <input type="email" class="form-control newsletter__mail h5" id="exampleInputEmail1" placeholder="Inserisci la tua mail" aria-describedby="emailHelp">
+            <p class="h6 newsletter__terms">*By clicking Subscribe, you agree to receive marketing newsletters from Racilia. 
+                Consent is not a condition of any purchase. The frequency of messages varies. 
+                View our <a class="semibold" href="#">Privacy Policy</a> and <a class="semibold" href="#">Terms of Service</a>
+            </p>
+            <button class="btn btn-secondary col-4 h5 semibold">ISCRIVITI</button>
+        </div>
+    </div>
+
+    <section class="pro-section">
+        <div class="pro-item col-3">
+            <img src="./assets/pro.svg" alt="pro">
+            <p class="h3 semibold text-primary">PAGAMENTI SICURI</p>
+            <p class="h4">The best payment methods to make you feel safe and secure.</p>
+        </div>
+
+        <div class="pro-item col-3">
+            <img src="./assets/pro2.svg" alt="pro">
+            <p class="h3 semibold text-primary">SPEDIZIONE GRATUITA</p>
+            <p class="h4">Free shipping on order over €65.</p>
+        </div>
+
+        <div class="pro-item col-3">
+            <img src="./assets/pro3.svg" alt="pro">
+            <p class="h3 semibold text-primary">SPEDIZIONE SICURA</p>
+            <p class="h4">Always get fresh products thanks to our shipping methods.</p>
+        </div>
+
+        <div class="pro-item col-3">
+            <img src="./assets/pro4.svg" alt="pro">
+            <p class="h3 semibold text-primary">SERVIZIO CLIENTI</p>
+            <p class="h4">For questions and information you can always contact us.</p>
+        </div>
+    </section>
+    
+    <img class="footer-divider w-100" src="./assets/divider-s-color.svg" alt="divisore">
+    <footer class="footer">
+        <img class="footer__logo" src="./assets/logo-footer.svg" alt="logo">
+
+        <div class="footer-list-container">
+            <div class="footer-list">
+                <p class="h5 footer-list__head">Support</p>
+                <a class="h5 footer-list__a" href="#">CONTACT US</a>
+                <a class="h5 footer-list__a" href="#">ACCOUNT</a>
+                <a class="h5 footer-list__a" href="#">MY ORDER</a>
+                <a class="h5 footer-list__a" href="#">FAQ</a>
+            </div>
+        </div>
+
+    </footer>
 </body>
 </html>
