@@ -809,17 +809,22 @@ body {
 
     .footer__logo {
         display: block;
-        margin-left: auto;
-        margin-right: auto;
+        margin: 0 auto 88px auto;
     }
 
     .footer-list-container {
+        display: flex;
+        padding: 0 $margin;
 
         .footer-list {
+            gap: 16px;
             color: white;
+            display: flex;
+            flex-direction: column;
 
             .footer-list__head {
                 opacity: 0.6;
+                margin-bottom: 8px;
             }
 
             .footer-list__a {
@@ -831,4 +836,42 @@ body {
             }
         }
     }
+
+    .footer-desk {
+        display: flex;
+        justify-content: space-between;
+        border-top: 1px solid #B44D74;
+        padding: 21px $margin;
+        margin-top: 76px;
+
+        .icon-wrapper {
+            padding-left: 26px;
+        }
+    }
+
+    .footer-powered {
+        background-color: $black;
+        padding: 16px 0;
+
+        .footer-powered__container {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+        }
+    }
 }
+
+.icon-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .social-icon {
+        opacity: 0.6;
+        width: 40px;
+        height: 40px;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}      
