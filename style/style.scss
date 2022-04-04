@@ -41,7 +41,9 @@
     font-weight: 800;
 }
 
-$margin: 5.5%;
+$margin: 2.5%;
+$margin-sm: 3.5%;
+$margin-xl: 5.5%;
 $label: #6E7191;
 
 
@@ -139,6 +141,12 @@ body {
 
 .title-block {
     text-align: center;
+    padding-left: $margin-xl;
+    padding-right: $margin-xl;
+
+    p {
+        margin-bottom: 8px;
+    }
 }
 
 .header {
@@ -152,19 +160,27 @@ body {
     }
 
     .nav {
-        padding-top: 16px;
-        padding-bottom: 16px;
         display: flex;
+        flex-wrap: nowrap;
         align-items: center;
         justify-content: space-between;
         margin-right: $margin;
         margin-left: $margin;
 
+        .logo-desktop {
+            display: none;
+        }
+
+        .logo-mobile {
+            margin-right: auto;
+            margin-left: auto;
+        }
+
         .nav-links {
-            display: flex;
+            display: none;
             justify-content: space-evenly;
-            width: 54%;
-            margin-left: 32px;
+            flex-wrap: wrap;
+            column-gap: 20px;
     
             .nav-links__item {
                 color: $black;
@@ -174,7 +190,17 @@ body {
         .icon-box {
             display: flex;
             gap: 30px;
-            align-items: flex-start;
+            align-items: center;
+            position: absolute;
+            right: $margin;
+
+            .icon-box__item {
+                display: none;
+            }
+        }
+
+        .nav__btn {
+            display: none;
         }
     }   
 }
@@ -184,7 +210,7 @@ body {
 }
 
 .fixed-btn {
-    display: flex;
+    display: none;
     background-color: $secondary;
     color: white;
     align-items: center;
@@ -201,6 +227,7 @@ body {
 }
 
 .img-near-btn {
+    display: none;
     position: absolute;
     left: calc(50% + 8em);
     bottom: 0;
@@ -208,21 +235,24 @@ body {
 
 .landing-section {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-left: $margin;
-    padding-right: 3%;
-    padding-top: 35px;
+    padding: 48px $margin 25px $margin;
     position: relative;
+    overflow: hidden;
+    row-gap: 74px;
     
 
     .landing__text {
         position: relative;
+        text-align: center;
 
         .landing__title {
             color: $primary;
         }
 
         .underline {
+            display: none;
             position: absolute;
             top: 98px;
             left: 72px;
@@ -232,14 +262,16 @@ body {
     }
 
     .landing__img {
+        position: relative;
         filter: drop-shadow(-10px 10px 44px rgba(0, 0, 0, 0.25));
         width: 110%;
-        margin-left: -10%;
+        z-index: 2;
     }
 
     .landing__arrow {
+        visibility: hidden;
         position: absolute;
-        bottom: 40px;
+        bottom: 7%;
     }
 
     .landing__bg {
@@ -253,6 +285,7 @@ body {
     }
 
     .landing__drawings {
+        display: none;
         position: absolute;
         top: 0;
         left: 10%;
@@ -261,47 +294,74 @@ body {
         opacity: 0.8;
     }
 
+    .landing__draw {
+        position: absolute;
+        z-index: -1;
+
+        &--first {
+            top: 80px;
+            left: 2%;
+        }
+
+        &--second {
+            top: 60px;
+            right: -15%;
+        }
+
+        &--third {
+            top: 235px;
+            right: 22%;
+        }
+
+        &--fourth {
+            top: 265px;
+            right: 6%;
+        }
+
+        &--fifth {
+            top: 265px;
+            left: 2%;
+        }
+    }
+
     .landing__divisor {
         position: absolute;
-        right: 0;
+        right: -60%;
         bottom: 0;
-        z-index: -1;
+        z-index: 1;
     }
 
     .landing__triangle {
         position: absolute;
-        right: 0;
+        right: -20%;
         bottom: 0;
-        z-index: -1;
+        z-index: 1;
     }
 }
 
 .vertical-container {
     display: flex;
     flex-direction: column;
-    gap: 72px;
+    gap: 32px;
     align-items: center;
 }
 
 .video-section {
-    padding-bottom: 330px;
+    padding-bottom: 110px;
     position: relative;
+    overflow-x: hidden;
 
     .video-section__img {
+        width: 180%;
         position: absolute;
         top: 0px;
-        left: 0;
+        left: -40%;
         z-index: -1;
+        filter: blur(3px);
     }
     
     .title-block {
-        margin-top: 124px;
-    }
-
-    .video-section__drawings {
-        position: absolute;
-        bottom: -75px;
-        width: calc(100% - 8em);
+        margin-top: 62px;
     }
 
     .arrow-btn {
@@ -314,11 +374,18 @@ body {
     margin-bottom: 78px;
     position: relative;
 
+    .product-section__drawings {
+        display: none;
+        position: absolute;
+        top: -612px;
+        width: calc(100% - 8em);
+    }
+
     .product-container {
         display: flex;
+        flex-direction: column;
         gap: 24px;
         padding-left: $margin;
-        padding-right: $margin + 3%;
     
         .product-col {
             display: flex;
@@ -326,9 +393,14 @@ body {
             gap: 24px;
     
             .product-card {
+                display: none;
                 position: relative;
                 border: 6px solid white;
                 height: fit-content;
+
+                &--mobile {
+                    display: initial;
+                }
             
                 .btn-hover {
                     position: absolute;
@@ -371,6 +443,7 @@ body {
 }
 
 .img-bg-wrapper {
+    display: none;
     width: 300px;
     height: 1px;
     position: relative;
@@ -488,7 +561,7 @@ body {
 
 .cooklab-section {
     background-image: url('../assets/aside-bg.png');
-    display: flex;
+    display: none;
     align-items: center;
     background-size: cover;
     margin-top: 72px;
@@ -522,7 +595,7 @@ body {
 
 .carousel {
     display: flex;
-    gap: 48px;
+    gap: 80px;
     overflow-x: scroll;
 
     &::-webkit-scrollbar {
@@ -550,6 +623,8 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        margin-left: $margin-xl;
+        margin-right: $margin-xl;
         
         .carousel-img-container {
             position: relative;
@@ -875,3 +950,250 @@ body {
         }
     }
 }      
+
+@include media-breakpoint-down(sm) {
+    .h1 {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .h2 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+
+    .h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+}
+
+@include media-breakpoint-up(sm) {
+
+    .header {
+        .nav {
+            margin-left: $margin-sm;
+            margin-right: $margin-sm;
+            
+            .logo-mobile {
+                margin-left: inherit;
+            }
+
+            .icon-box {
+                position: initial;
+
+                .icon-box__item {
+                    display: initial;
+                }
+
+                div {
+                    margin-right: 1rem;
+                }
+            }
+        }
+    }
+    
+    .landing-section {
+        padding-left: $margin-sm;
+        padding-right: $margin-sm;
+
+        .landing__draw {
+            
+            &--third {
+                top: 350px;
+                right: 30%;
+            }
+    
+            &--fourth {
+                top: 384px;
+                right: 19%;
+            }
+    
+            &--fifth {
+                top: 400px;
+                left: 5%;
+            }
+        }
+    
+    }
+
+    .video-section {
+        .video-section__img {
+           width: 150%; 
+           left: -25%;
+        }
+    }
+}
+
+@include media-breakpoint-up(md) {
+    .img-bg-wrapper {
+        display: block;
+    }
+
+    .vertical-container {
+        gap: 72px;
+    }
+
+    .img-near-btn {
+        display: initial;
+    }
+
+    .header {
+        .nav {
+            padding-top: 16px;
+            padding-bottom: 16px;
+
+            .nav__btn {
+                display: initial;
+            }
+        }
+    }
+
+    .fixed-btn {
+        display: flex;
+    }
+
+    .landing-section {
+        flex-direction: row;
+        padding-top: 35px;
+
+        .landing__text {
+            text-align: start;
+            p {
+                padding-right: 1.5rem;
+            }
+
+            .underline {
+                display: initial;
+            }
+        }
+
+        .landing__img {
+            margin-left: -10%;
+        }
+        
+        .landing__divisor {
+            right: 0;
+            bottom: 0;
+        }
+    
+        .landing__triangle {
+            right: 0;
+            bottom: 0;
+        }
+
+        .landing__draw {
+            display: none;
+        }
+
+        .landing__drawings {
+            display: initial;
+        }
+    }
+
+    .video-section {
+        padding-bottom: 330px;
+
+        .video-section__img {
+           width: 125%; 
+           left: -12%;
+           filter: none;
+        }
+
+        .title-block {
+            margin-top: 124px;
+            p {
+                margin-bottom: 8px;
+            }
+        }
+    }
+    
+    .product-section {
+        .product-section__drawings {
+            display: initial;
+        }
+
+        .product-container {
+            flex-direction: row;
+            padding-right: $margin + 3%;
+
+            .product-col {
+                .product-card {
+                    display: inline;
+
+                }
+            }
+        }
+    }
+
+    .cooklab-section {
+        display: flex;
+    }
+
+    .carousel {
+        gap: 48px;
+
+        .carousel-card {
+            margin-left: initial;
+        }
+    }
+    
+}
+
+@include media-breakpoint-up(lg) {
+
+    .header {
+        .nav {
+
+            .burger-menu {
+                display: none;
+            }
+    
+            .logo-mobile {
+                display: none;
+            }
+    
+            .logo-desktop {
+                display: initial;
+            }
+
+            .nav-links {
+                margin-left: 32px;
+                width: 54%;
+                display: flex;
+            }
+        }
+    }
+    
+    .landing-section {
+        .landing__arrow {
+            visibility: visible;
+        }
+    }
+
+    .video-section {
+        .video-section__img {
+           width: 100%; 
+           left: 0;
+           filter: none;
+        }
+    }
+}
+
+@include media-breakpoint-up(xl) {
+    .header {
+        .nav {
+            margin-left: $margin-xl;
+            margin-right: $margin-xl;
+
+            .nav-links {
+                column-gap: 0;
+            }
+        }
+    }
+
+    .landing-section {
+        padding-left: $margin-xl;
+        padding-right: $margin-xl;
+    }
+}

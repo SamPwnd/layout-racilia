@@ -128,6 +128,11 @@ body {
 
 .title-block {
   text-align: center;
+  padding-left: 5.5%;
+  padding-right: 5.5%;
+}
+.title-block p {
+  margin-bottom: 8px;
 }
 
 .header {
@@ -140,19 +145,25 @@ body {
   padding: 13px;
 }
 .header .nav {
-  padding-top: 16px;
-  padding-bottom: 16px;
   display: flex;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  margin-right: 5.5%;
-  margin-left: 5.5%;
+  margin-right: 2.5%;
+  margin-left: 2.5%;
+}
+.header .nav .logo-desktop {
+  display: none;
+}
+.header .nav .logo-mobile {
+  margin-right: auto;
+  margin-left: auto;
 }
 .header .nav .nav-links {
-  display: flex;
+  display: none;
   justify-content: space-evenly;
-  width: 54%;
-  margin-left: 32px;
+  flex-wrap: wrap;
+  column-gap: 20px;
 }
 .header .nav .nav-links .nav-links__item {
   color: #14142B;
@@ -160,7 +171,15 @@ body {
 .header .nav .icon-box {
   display: flex;
   gap: 30px;
-  align-items: flex-start;
+  align-items: center;
+  position: absolute;
+  right: 2.5%;
+}
+.header .nav .icon-box .icon-box__item {
+  display: none;
+}
+.header .nav .nav__btn {
+  display: none;
 }
 
 .different-color {
@@ -168,7 +187,7 @@ body {
 }
 
 .fixed-btn {
-  display: flex;
+  display: none;
   background-color: #AC3964;
   color: white;
   align-items: center;
@@ -185,6 +204,7 @@ body {
 }
 
 .img-near-btn {
+  display: none;
   position: absolute;
   left: calc(50% + 8em);
   bottom: 0;
@@ -192,19 +212,22 @@ body {
 
 .landing-section {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  padding-left: 5.5%;
-  padding-right: 3%;
-  padding-top: 35px;
+  padding: 48px 2.5% 25px 2.5%;
   position: relative;
+  overflow: hidden;
+  row-gap: 74px;
 }
 .landing-section .landing__text {
   position: relative;
+  text-align: center;
 }
 .landing-section .landing__text .landing__title {
   color: #3A7D44;
 }
 .landing-section .landing__text .underline {
+  display: none;
   position: absolute;
   top: 98px;
   left: 72px;
@@ -212,13 +235,15 @@ body {
   opacity: 0.6;
 }
 .landing-section .landing__img {
+  position: relative;
   filter: drop-shadow(-10px 10px 44px rgba(0, 0, 0, 0.25));
   width: 110%;
-  margin-left: -10%;
+  z-index: 2;
 }
 .landing-section .landing__arrow {
+  visibility: hidden;
   position: absolute;
-  bottom: 40px;
+  bottom: 7%;
 }
 .landing-section .landing__bg {
   background-color: #f9f8f2;
@@ -230,6 +255,7 @@ body {
   height: 100%;
 }
 .landing-section .landing__drawings {
+  display: none;
   position: absolute;
   top: 0;
   left: 10%;
@@ -237,43 +263,65 @@ body {
   transform: rotate(3.22deg);
   opacity: 0.8;
 }
+.landing-section .landing__draw {
+  position: absolute;
+  z-index: -1;
+}
+.landing-section .landing__draw--first {
+  top: 80px;
+  left: 2%;
+}
+.landing-section .landing__draw--second {
+  top: 60px;
+  right: -15%;
+}
+.landing-section .landing__draw--third {
+  top: 235px;
+  right: 22%;
+}
+.landing-section .landing__draw--fourth {
+  top: 265px;
+  right: 6%;
+}
+.landing-section .landing__draw--fifth {
+  top: 265px;
+  left: 2%;
+}
 .landing-section .landing__divisor {
   position: absolute;
-  right: 0;
+  right: -60%;
   bottom: 0;
-  z-index: -1;
+  z-index: 1;
 }
 .landing-section .landing__triangle {
   position: absolute;
-  right: 0;
+  right: -20%;
   bottom: 0;
-  z-index: -1;
+  z-index: 1;
 }
 
 .vertical-container {
   display: flex;
   flex-direction: column;
-  gap: 72px;
+  gap: 32px;
   align-items: center;
 }
 
 .video-section {
-  padding-bottom: 330px;
+  padding-bottom: 110px;
   position: relative;
+  overflow-x: hidden;
 }
 .video-section .video-section__img {
+  width: 180%;
   position: absolute;
   top: 0px;
-  left: 0;
+  left: -40%;
   z-index: -1;
+  filter: blur(3px);
 }
 .video-section .title-block {
-  margin-top: 124px;
-}
-.video-section .video-section__drawings {
-  position: absolute;
-  bottom: -75px;
-  width: calc(100% - 8em);
+  margin-top: 62px;
 }
 .video-section .arrow-btn {
   bottom: 345px;
@@ -283,11 +331,17 @@ body {
   margin-bottom: 78px;
   position: relative;
 }
+.product-section .product-section__drawings {
+  display: none;
+  position: absolute;
+  top: -612px;
+  width: calc(100% - 8em);
+}
 .product-section .product-container {
   display: flex;
+  flex-direction: column;
   gap: 24px;
-  padding-left: 5.5%;
-  padding-right: 8.5%;
+  padding-left: 2.5%;
 }
 .product-section .product-container .product-col {
   display: flex;
@@ -295,9 +349,13 @@ body {
   gap: 24px;
 }
 .product-section .product-container .product-col .product-card {
+  display: none;
   position: relative;
   border: 6px solid white;
   height: fit-content;
+}
+.product-section .product-container .product-col .product-card--mobile {
+  display: initial;
 }
 .product-section .product-container .product-col .product-card .btn-hover {
   position: absolute;
@@ -330,6 +388,7 @@ body {
 }
 
 .img-bg-wrapper {
+  display: none;
   width: 300px;
   height: 1px;
   position: relative;
@@ -427,7 +486,7 @@ body {
 
 .cooklab-section {
   background-image: url("../assets/aside-bg.png");
-  display: flex;
+  display: none;
   align-items: center;
   background-size: cover;
   margin-top: 72px;
@@ -456,7 +515,7 @@ body {
 
 .carousel {
   display: flex;
-  gap: 48px;
+  gap: 80px;
   overflow-x: scroll;
 }
 .carousel::-webkit-scrollbar {
@@ -480,6 +539,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 5.5%;
+  margin-right: 5.5%;
 }
 .carousel .carousel-card .carousel-img-container {
   position: relative;
@@ -527,8 +588,8 @@ body {
 
 .section-article {
   margin-top: -96px;
-  padding-left: 5.5%;
-  padding-right: 5.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -575,8 +636,8 @@ body {
 
 .infographic {
   background-color: #EDAD20;
-  padding-left: 5.5%;
-  padding-right: 5.5%;
+  padding-left: 2.5%;
+  padding-right: 2.5%;
   padding-bottom: 150px;
 }
 .infographic--last {
@@ -702,7 +763,7 @@ body {
 }
 .footer .footer-list-container {
   display: flex;
-  padding: 0 5.5%;
+  padding: 0 2.5%;
 }
 .footer .footer-list-container .footer-list {
   gap: 16px;
@@ -724,7 +785,7 @@ body {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid #B44D74;
-  padding: 21px 5.5%;
+  padding: 21px 2.5%;
   margin-top: 76px;
 }
 .footer .footer-desk .icon-wrapper {
@@ -751,6 +812,196 @@ body {
 }
 .icon-wrapper .social-icon:hover {
   opacity: 1;
+}
+
+@media (max-width: 575.98px) {
+  .h1 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .h2 {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .h3 {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}
+@media (min-width: 576px) {
+  .header .nav {
+    margin-left: 3.5%;
+    margin-right: 3.5%;
+  }
+  .header .nav .logo-mobile {
+    margin-left: inherit;
+  }
+  .header .nav .icon-box {
+    position: initial;
+  }
+  .header .nav .icon-box .icon-box__item {
+    display: initial;
+  }
+  .header .nav .icon-box div {
+    margin-right: 1rem;
+  }
+
+  .landing-section {
+    padding-left: 3.5%;
+    padding-right: 3.5%;
+  }
+  .landing-section .landing__draw--third {
+    top: 350px;
+    right: 30%;
+  }
+  .landing-section .landing__draw--fourth {
+    top: 384px;
+    right: 19%;
+  }
+  .landing-section .landing__draw--fifth {
+    top: 400px;
+    left: 5%;
+  }
+
+  .video-section .video-section__img {
+    width: 150%;
+    left: -25%;
+  }
+}
+@media (min-width: 768px) {
+  .img-bg-wrapper {
+    display: block;
+  }
+
+  .vertical-container {
+    gap: 72px;
+  }
+
+  .img-near-btn {
+    display: initial;
+  }
+
+  .header .nav {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+  .header .nav .nav__btn {
+    display: initial;
+  }
+
+  .fixed-btn {
+    display: flex;
+  }
+
+  .landing-section {
+    flex-direction: row;
+    padding-top: 35px;
+  }
+  .landing-section .landing__text {
+    text-align: start;
+  }
+  .landing-section .landing__text p {
+    padding-right: 1.5rem;
+  }
+  .landing-section .landing__text .underline {
+    display: initial;
+  }
+  .landing-section .landing__img {
+    margin-left: -10%;
+  }
+  .landing-section .landing__divisor {
+    right: 0;
+    bottom: 0;
+  }
+  .landing-section .landing__triangle {
+    right: 0;
+    bottom: 0;
+  }
+  .landing-section .landing__draw {
+    display: none;
+  }
+  .landing-section .landing__drawings {
+    display: initial;
+  }
+
+  .video-section {
+    padding-bottom: 330px;
+  }
+  .video-section .video-section__img {
+    width: 125%;
+    left: -12%;
+    filter: none;
+  }
+  .video-section .title-block {
+    margin-top: 124px;
+  }
+  .video-section .title-block p {
+    margin-bottom: 8px;
+  }
+
+  .product-section .product-section__drawings {
+    display: initial;
+  }
+  .product-section .product-container {
+    flex-direction: row;
+    padding-right: 5.5%;
+  }
+  .product-section .product-container .product-col .product-card {
+    display: inline;
+  }
+
+  .cooklab-section {
+    display: flex;
+  }
+
+  .carousel {
+    gap: 48px;
+  }
+  .carousel .carousel-card {
+    margin-left: initial;
+  }
+}
+@media (min-width: 992px) {
+  .header .nav .burger-menu {
+    display: none;
+  }
+  .header .nav .logo-mobile {
+    display: none;
+  }
+  .header .nav .logo-desktop {
+    display: initial;
+  }
+  .header .nav .nav-links {
+    margin-left: 32px;
+    width: 54%;
+    display: flex;
+  }
+
+  .landing-section .landing__arrow {
+    visibility: visible;
+  }
+
+  .video-section .video-section__img {
+    width: 100%;
+    left: 0;
+    filter: none;
+  }
+}
+@media (min-width: 1200px) {
+  .header .nav {
+    margin-left: 5.5%;
+    margin-right: 5.5%;
+  }
+  .header .nav .nav-links {
+    column-gap: 0;
+  }
+
+  .landing-section {
+    padding-left: 5.5%;
+    padding-right: 5.5%;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

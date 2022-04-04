@@ -10,15 +10,14 @@
     <title>Home - Racilia</title>
 </head>
 <body>
-    <main>
-        
-    </main>
     <header class="header">
         <div class="header-banner bg-primary">
             <p class="header-banner__p h6"><strong> Free shipping </strong> on order <strong> over €65! </strong></p>
         </div>
         <nav class="nav">
-            <img src="assets/logo.svg" alt="logo">
+            <img class="burger-menu" src="./assets/burger.svg" alt="burger-menu">
+            <img class="logo-mobile" src="./assets/Logo V m.svg" alt="logo">
+            <img class="logo-desktop" src="assets/logo.svg" alt="logo">
             <div class="nav-links">
                 <div class="dropdown">
                     <a class="dropdown-toggle h5 semibold nav-links__item" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
@@ -37,15 +36,16 @@
                 <a class="nav-links__item h5 semibold" href="#">CONTACT US</a>
             </div>
 
-            <button class="btn btn-secondary h5 semibold">SHOP</button>
+            
 
             <div class="icon-box">
-                <p class="h4 semibold">EN</p>
-                <img src="./assets/Search.svg" alt="search icon">
-                <img src="./assets/Profile.svg" alt="Profile icon">
+                <button class="nav__btn btn btn-secondary h5 semibold">SHOP</button>
+                <p class="h4 semibold icon-box__item">EN</p>
+                <img class="icon-box__item" src="./assets/Search.svg" alt="search icon">
+                <img class="icon-box__item" src="./assets/Profile.svg" alt="Profile icon">
                 <div class="d-flex align-items-start">
                     <img src="./assets/Bag.svg" alt="bag icon">
-                    <p class="h6 semibold text-secondary ms-1 me-3">0</p>
+                    <p class="h6 semibold text-secondary ms-1">0</p>
                 </div>
             </div>
         </nav>
@@ -57,33 +57,39 @@
     </div>
 
     <section class="landing-section container-fluid">
-        <div class="landing__text col-7">
-            <p class="h3 ms-2">Assapora la Sicilia.</p>
-            <h1 class="landing__title h1 ms-2">Il <span class="different-color">sapore</span> del Mediterraneo sulla tua tavola </h1>
+        <div class="landing__text col-12 col-md-7">
+            <p class="h3">Assapora la Sicilia.</p>
+            <p class="landing__title h1">Il <span class="different-color">sapore</span> del Mediterraneo sulla tua tavola </p>
             <img class="underline" src="./assets/Underline_06.svg" alt="underline">
         </div>
 
-        <div class="col-5">
+        <div class="col-12 col-md-5">
             <img class="landing__img" src="./assets/Mediterranean-pasta-salad-1 2.png" alt="pasta">
-        </div> 
+            <img class="landing__divisor h-100" src="./assets/top bg divider.svg" alt="divisor">
+        <img class="landing__triangle col-12 col-md-5" src="./assets/triangle.svg" alt="triangle">
+        </div>
+        <img class="landing__draw landing__draw--first" src="./assets/land-draw1.svg" alt="land draw">
+        <img class="landing__draw landing__draw--second" src="./assets/land-draw2.svg" alt="land draw">
+        <img class="landing__draw landing__draw--third" src="./assets/land-draw3.svg" alt="land draw">
+        <img class="landing__draw landing__draw--fourth" src="./assets/land-draw4.svg" alt="land draw">
+        <img class="landing__draw landing__draw--fifth" src="./assets/land-draw5.svg" alt="land draw">
         <img class="landing__drawings" src="./assets/bg-graph.svg" alt="background">
-        <img class="landing__divisor w-100 h-100" src="./assets/top bg divider.svg" alt="divisor">
-        <img class="landing__triangle col-5" src="./assets/triangle.svg" alt="triangle">
+        
         <div class="landing__bg"></div>
         <img class="landing__arrow" src="./assets/arrow.svg" alt="freccia giù">
     </section>
 
     <section class="video-section">
-        <img class="video-section__img w-100" src="./assets/background-video-sec.png" alt="prato">
+        <img class="video-section__img" src="./assets/background-video-sec.png" alt="prato">
         <div class="vertical-container">
             <div class="title-block">
                 <p class="h3 text-white">È qui che vengono coltivate le nostre materie prime.</p>
                 <p class="h2 text-tertiary">Fai un viaggio alla scoperta della Sicilia </p>
             </div>
 
-            <img class="col-10" src="./assets/video.png" alt="video">
+            <img class="col-11 col-md-10 col-lg-9 col-xl-8" src="./assets/video.png" alt="video">
 
-            <p class="h4 col-8 ps-5 pe-5 text-center">
+            <p class="h4 col-12 col-md-10 col-lg-8 col-xl-7 ps-5 pe-5 text-center">
                 Racilia è il punto di riferimento per coloro che vogliono
                 alimentarsi con gusto e coscienza, consapevoli di contribuire
                 alla valorizzazione del territorio siciliano, rispettando l’ambiente.
@@ -91,19 +97,19 @@
 
             <button class="btn btn-outline-secondary h5 semibold">SCOPRI DI PIÙ</button>
             <img class="img-near-btn arrow-btn" src="./assets/arrow2.svg" alt="arrow">
-            <img class="video-section__drawings" src="./assets/bg-draw2.svg" alt="drawings">
         </div>
     </section>
 
     <section class="product-section vertical-container">
+        <img class="product-section__drawings" src="./assets/bg-draw2.svg" alt="drawings">
         <div class="title-block">
             <p class="h3">I nostri prodotti.</p>
             <p class="h2 text-primary">Buoni per te e per l’ambiente</p>
         </div>
 
         <div class="product-container col-12">
-            <div class="product-col col-4">
-                <div class="product-card">
+            <div class="product-col col-12 col-md-4">
+                <div class="product-card product-card--mobile">
                     <img class="product-img w-100" src="assets/prod1.png" alt="immagine card">
                     <button class="btn-hover btn btn-secondary h5 semibold">ACQUISTA</button>
                 </div>
@@ -117,8 +123,8 @@
                 </div>
             </div>
             
-            <div class="product-col col-4">
-                <div class="product-card">
+            <div class="product-col col-12 col-md-4">
+                <div class="product-card product-card--mobile">
                     <img class="product-img w-100" src="assets/prod-blur.png" alt="immagine card">
                     <div>
                         <p class="product-txt h2">Chocolate</p>
@@ -132,8 +138,8 @@
                 </div>
             </div>
             
-            <div class="product-col col-4">
-                <div class="product-card">
+            <div class="product-col col-12 col-md-4">
+                <div class="product-card product-card--mobile">
                     <img class="product-img w-100" src="assets/prod1.png" alt="immagine card">
                     <button class="btn-hover btn btn-secondary h5 semibold">ACQUISTA</button>
                 </div>
